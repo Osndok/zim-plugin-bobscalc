@@ -1,0 +1,8 @@
+
+h2. Features
+
+* ignores everything before the last ":" on a line (e.g. for labels)
+* *might* work for a few outline types
+* can evaluate an expression by hitting "Ctrl-<equals>"
+
+e.g. you can type "something: 123*455<Ctrl-Equals>"
