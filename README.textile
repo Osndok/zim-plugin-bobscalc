@@ -3,6 +3,6 @@ h2. Features
 
 * ignores everything before the last ":" on a line (e.g. for labels)
 * *might* work for a few outline types
-* can evaluate an expression by hitting "Ctrl-<equals>"
+* can evaluate an expression by hitting "Ctrl-&#60;Equals&#62;"
 
-e.g. you can type "something: 123*455<Ctrl-Equals>"
+e.g. you can type "something: 123*455&#60;Ctrl-Equals&#62;"
