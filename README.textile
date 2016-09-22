@@ -6,3 +6,7 @@ h2. Features
 * can evaluate an expression by hitting "Ctrl-&#60;Equals&#62;"
 
 e.g. you can type "something: 123*455&#60;Ctrl-Equals&#62;"
+
+*NOTE:* After enabling the plugin, you will probably have to restart
+zim to actually use the hotkey, as the "zoom in"/Ctrl-Plus will interfere.
+
