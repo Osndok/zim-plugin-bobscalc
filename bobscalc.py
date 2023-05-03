@@ -244,6 +244,8 @@ This is derived from the 'inline calculator' core plugin that ships with zim.
 		# Check for non-math prefix
 		prefix = ''
 
+		# TODO: make each of these "if statements" a simple value in a string array, and loop over it.
+
 		# Let the user label something with a colon, and not have it fail to evaluate
 		if ':' in line:
 			i = line.rindex(':') + 1
@@ -252,6 +254,16 @@ This is derived from the 'inline calculator' core plugin that ships with zim.
 
 		if '•' in line:
 			i = line.rindex('•') + 3
+			prefix += line[:i]
+			line = line[i:]
+
+		if 'am - ' in line:
+			i = line.rindex('am - ') + 5
+			prefix += line[:i]
+			line = line[i:]
+
+		if 'pm - ' in line:
+			i = line.rindex('pm - ') + 5
 			prefix += line[:i]
 			line = line[i:]
 
