@@ -310,12 +310,21 @@ This is derived from the 'inline calculator' core plugin that ships with zim.
 			prefix += line[:i]
 			line=stripped
 
+		# Use a separate variable so that (for example) the extra commas don't vanish
+		eval_me = line
+
+		# Remove commas that appear directly between two numbers (whitespace sensitive).
+		# This is intended to allow computation of numbers that have commas in them without
+		# having 'eval' convert them into tuples or lists.
+		while re.search(r'(\d+),(\d+)', eval_me):
+			eval_me = re.sub(r'(\d+),(\d+)', r'\1\2', eval_me)
+
 		#logger.debug("len(line)=%d", len(line))
 
 		#NB: the following line can raise an exception if line is empty
 		#logger.debug("Evaluating: '%s' (1st char = %d)", line, ord(line[0:1]))
 
-		result = self.safe_eval(line)
+		result = self.safe_eval(eval_me)
 
 		return prefix + line + '= ' + str(result) + postfix
 
